@@ -97,7 +97,7 @@ jobs:
         scope: subscription
         subscription-id: ${{ env.SUBSCRIPTION-ID }}
         template-file: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+        parameters: '{"webAppName": "${{ env.WEBAPP-NAME }}", "location": "${{ env.LOCATION }}"}'
     
     # Publish website to Azure App Service (WebApp)
     # Step disabled due to issue where the site sometimes can't be found: https://github.com/microsoft/pipelines-appservice-lib/issues/56. Instead deploy using CLI
